@@ -9,7 +9,7 @@ import {
 
 export const DEFAULT_DIRECT_IMAGES: DirectImageLinks = {
   // Portrait matching the founder (bald with dark beard and black shirt) seamlessly integrated
-  heroPortrait: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=1000&q=85',
+  heroPortrait: '/hero-portrait.png',
   // SaaS Analytics Pro dashboard interface
   caseAnalytics: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
   // TaskFlow AI interface

@@ -31,20 +31,18 @@ export const Hero: React.FC<HeroProps> = ({
 
   const scenario = PIPELINE_SCENARIOS[activeScenarioIndex];
 
-  // Load custom photo from local storage on mount if available
+  // Load custom photo or sync with portraitUrl
   useEffect(() => {
-    try {
-      const saved = localStorage.getItem('vibe_coding_custom_hero_photo');
-      if (saved) {
-        setDisplayImage(saved);
-        return;
-      }
-    } catch {
-      // ignore
-    }
-
-    // Process initial portraitUrl to remove white background if needed
     if (portraitUrl) {
+      try {
+        const saved = localStorage.getItem('vibe_coding_custom_hero_photo');
+        if (saved && saved.startsWith('data:image/')) {
+          setDisplayImage(saved);
+          return;
+        }
+      } catch {
+        // ignore
+      }
       processAndSetImage(portraitUrl, false);
     }
   }, [portraitUrl]);
@@ -262,9 +260,8 @@ export const Hero: React.FC<HeroProps> = ({
                   }}
                   referrerPolicy="no-referrer"
                   onError={(e) => {
-                    // Fallback to portrait with bald bearded developer
-                    (e.target as HTMLImageElement).src =
-                      'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=1000&q=85';
+                    // Fallback to local transparent portrait
+                    (e.target as HTMLImageElement).src = '/hero-portrait.png';
                   }}
                 />
 

@@ -18,7 +18,13 @@ export default function App() {
   const [imageLinks, setImageLinks] = useState<DirectImageLinks>(() => {
     try {
       const saved = localStorage.getItem('vibe_coding_image_links');
-      if (saved) return JSON.parse(saved);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (!parsed.heroPortrait || parsed.heroPortrait.includes('unsplash.com') || parsed.heroPortrait.includes('hero-portrait.jpg')) {
+          parsed.heroPortrait = DEFAULT_DIRECT_IMAGES.heroPortrait;
+        }
+        return { ...DEFAULT_DIRECT_IMAGES, ...parsed };
+      }
     } catch {
       // ignore
     }
