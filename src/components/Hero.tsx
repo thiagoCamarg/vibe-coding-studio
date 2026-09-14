@@ -183,7 +183,7 @@ export const Hero: React.FC<HeroProps> = ({
           <div className="lg:col-span-7 flex flex-col items-start z-10">
 
             {/* Display Headline */}
-            <h1 className="font-syne text-4xl sm:text-5xl lg:text-[62px] font-extrabold tracking-tight text-white leading-[1.08] mb-6">
+            <h1 className="font-syne text-3xl sm:text-5xl lg:text-[62px] font-extrabold tracking-tight text-white leading-[1.08] mb-6">
               Transformo <br />
               Sua Ideia em <br />
               Software <br />
@@ -288,36 +288,43 @@ export const Hero: React.FC<HeroProps> = ({
           <div className="rounded-xl bg-[#121216]/90 border border-white/10 shadow-2xl overflow-hidden backdrop-blur-md">
             
             {/* Terminal Top Window Bar */}
-            <div className="px-4 py-3 bg-[#18181f]/90 border-b border-white/[0.08] flex items-center justify-between">
-              <div className="flex items-center gap-3">
+            <div className="px-3 sm:px-4 py-3 bg-[#18181f]/90 border-b border-white/[0.08] flex items-center justify-between gap-2">
+              <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
                 {/* Traffic lights */}
-                <div className="flex items-center gap-1.5">
-                  <span className="w-3 h-3 rounded-full bg-[#ff5f56]" />
-                  <span className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
-                  <span className="w-3 h-3 rounded-full bg-[#27c93f]" />
+                <div className="flex items-center gap-1.5 shrink-0">
+                  <span className="w-2.5 sm:w-3 h-2.5 sm:h-3 rounded-full bg-[#ff5f56]" />
+                  <span className="w-2.5 sm:w-3 h-2.5 sm:h-3 rounded-full bg-[#ffbd2e]" />
+                  <span className="w-2.5 sm:w-3 h-2.5 sm:h-3 rounded-full bg-[#27c93f]" />
                 </div>
-                <div className="h-4 w-px bg-white/10 ml-1" />
-                <span className="font-mono text-xs text-[#94a3b8] flex items-center gap-1.5">
-                  <Terminal className="w-3.5 h-3.5 text-[#06b6d4]" />
-                  <span>production.pipeline</span>
-                  <span className="text-white/30">//</span>
-                  <span className="text-[#c7c4d7]">client_delivery</span>
+                <div className="h-4 w-px bg-white/10 ml-0.5 sm:ml-1 shrink-0" />
+                <span className="font-mono text-xs text-[#94a3b8] flex items-center gap-1.5 min-w-0 truncate">
+                  <Terminal className="w-3.5 h-3.5 text-[#06b6d4] shrink-0" />
+                  <span className="truncate text-white/90">production.pipeline</span>
+                  <span className="text-white/30 hidden sm:inline shrink-0">//</span>
+                  <span className="text-[#c7c4d7] hidden sm:inline shrink-0 truncate">client_delivery</span>
                 </span>
               </div>
 
               {/* Status & Replay Button */}
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
                 <button
                   onClick={runSimulation}
                   disabled={pipelineState === 'running'}
-                  className="px-2.5 py-1 rounded text-[11px] font-mono text-[#94a3b8] hover:text-white bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 transition-colors flex items-center gap-1 cursor-pointer"
+                  className="px-2 sm:px-2.5 py-1 rounded text-[10px] sm:text-[11px] font-mono text-[#94a3b8] hover:text-white bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 transition-colors flex items-center gap-1 cursor-pointer shrink-0"
                   title="Simular execução do pipeline"
                 >
                   <RefreshCw className={`w-3 h-3 ${pipelineState === 'running' ? 'animate-spin text-[#06b6d4]' : ''}`} />
                   <span className="hidden sm:inline">Re-executar</span>
                 </button>
-                <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold tracking-wide bg-[#10b981]/15 text-[#10b981] border border-[#10b981]/30">
-                  {pipelineState === 'running' ? 'EXECUTING...' : 'READY TO SHIP'}
+                <span className="px-2 sm:px-2.5 py-0.5 rounded-full text-[9px] sm:text-[10px] font-mono font-semibold tracking-wide bg-[#10b981]/15 text-[#10b981] border border-[#10b981]/30 shrink-0">
+                  {pipelineState === 'running' ? (
+                    <span>EXECUTING...</span>
+                  ) : (
+                    <>
+                      <span className="sm:hidden">READY</span>
+                      <span className="hidden sm:inline">READY TO SHIP</span>
+                    </>
+                  )}
                 </span>
               </div>
             </div>
@@ -384,12 +391,12 @@ export const Hero: React.FC<HeroProps> = ({
             </div>
 
             {/* Terminal Footer Info */}
-            <div className="px-5 py-2.5 bg-[#0e0e12] border-t border-white/[0.06] flex items-center justify-between text-[11px] font-mono text-[#94a3b8]">
-              <span className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#06b6d4]" />
-                Stack: {scenario.techStack}
+            <div className="px-4 sm:px-5 py-2.5 bg-[#0e0e12] border-t border-white/[0.06] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 sm:gap-2 text-[10px] sm:text-[11px] font-mono text-[#94a3b8]">
+              <span className="flex items-center gap-1.5 truncate max-w-full">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#06b6d4] shrink-0" />
+                <span className="truncate">Stack: {scenario.techStack}</span>
               </span>
-              <span className="text-[#10b981]">Garantia de Entrega Ágil</span>
+              <span className="text-[#10b981] shrink-0">Garantia de Entrega Ágil</span>
             </div>
 
           </div>

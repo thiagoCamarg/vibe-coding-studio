@@ -181,15 +181,18 @@ export const CasesSection: React.FC<CasesSectionProps> = ({
                   </div>
 
                   {/* Bottom indicator matching reference screenshot */}
-                  <div className="absolute bottom-3 inset-x-3 flex items-center justify-between">
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/15 text-xs font-mono text-[#10b981]">
-                      <span className="w-2 h-2 rounded-full bg-[#10b981] shadow-[0_0_6px_#10b981]" />
-                      <span>Em Produção com Clientes Pagantes</span>
+                  <div className="absolute bottom-3 inset-x-3 flex items-center justify-between gap-2">
+                    <div className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/15 text-[11px] sm:text-xs font-mono text-[#10b981] truncate min-w-0">
+                      <span className="w-2 h-2 rounded-full bg-[#10b981] shadow-[0_0_6px_#10b981] shrink-0" />
+                      <span className="truncate">
+                        <span className="hidden sm:inline">Em Produção com Clientes Pagantes</span>
+                        <span className="sm:hidden">Em Produção</span>
+                      </span>
                     </div>
 
                     <button
                       onClick={() => onOpenCaseModal(saasCase)}
-                      className="px-3 py-1.5 rounded-lg text-xs font-mono text-white bg-[#6366f1] hover:bg-[#4f46e5] shadow-lg flex items-center gap-1.5 cursor-pointer"
+                      className="px-2.5 sm:px-3 py-1.5 rounded-lg text-[11px] sm:text-xs font-mono text-white bg-[#6366f1] hover:bg-[#4f46e5] shadow-lg flex items-center gap-1.5 cursor-pointer shrink-0"
                     >
                       <Play className="w-3 h-3 fill-current" />
                       <span>Testar Demo</span>
@@ -265,15 +268,18 @@ export const CasesSection: React.FC<CasesSectionProps> = ({
                     </div>
                   </div>
 
-                  <div className="absolute bottom-3 inset-x-3 flex items-center justify-between">
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/15 text-xs font-mono text-[#acedff]">
-                      <span className="w-2 h-2 rounded-full bg-[#06b6d4] shadow-[0_0_6px_#06b6d4]" />
-                      <span>Pronto para Produção Corporativa</span>
+                  <div className="absolute bottom-3 inset-x-3 flex items-center justify-between gap-2">
+                    <div className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/15 text-[11px] sm:text-xs font-mono text-[#acedff] truncate min-w-0">
+                      <span className="w-2 h-2 rounded-full bg-[#06b6d4] shadow-[0_0_6px_#06b6d4] shrink-0" />
+                      <span className="truncate">
+                        <span className="hidden sm:inline">Pronto para Produção Corporativa</span>
+                        <span className="sm:hidden">Produção Corporativa</span>
+                      </span>
                     </div>
 
                     <button
                       onClick={() => onOpenCaseModal(enterpriseCase)}
-                      className="px-3 py-1.5 rounded-lg text-xs font-mono text-white bg-[#06b6d4] hover:bg-[#0891b2] shadow-lg flex items-center gap-1.5 cursor-pointer text-black font-semibold"
+                      className="px-2.5 sm:px-3 py-1.5 rounded-lg text-[11px] sm:text-xs font-mono text-black font-semibold bg-[#06b6d4] hover:bg-[#0891b2] shadow-lg flex items-center gap-1.5 cursor-pointer shrink-0"
                     >
                       <Play className="w-3 h-3 fill-current" />
                       <span>Testar Demo</span>
@@ -362,18 +368,18 @@ export const CasesSection: React.FC<CasesSectionProps> = ({
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c0f] via-transparent to-[#0c0c0f]/40 pointer-events-none" />
 
                     {/* Streaming simulator pill */}
-                    <div className="absolute top-3 left-3 flex items-center gap-2 px-3 py-1.5 rounded-lg bg-black/80 backdrop-blur-md border border-white/15 text-xs font-mono text-white">
-                      <Sparkles className="w-3.5 h-3.5 text-[#06b6d4]" />
-                      <span>Streaming LLM Engine // Active</span>
+                    <div className="absolute top-3 left-3 flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 rounded-lg bg-black/80 backdrop-blur-md border border-white/15 text-[11px] sm:text-xs font-mono text-white max-w-[70%] sm:max-w-none truncate">
+                      <Sparkles className="w-3.5 h-3.5 text-[#06b6d4] shrink-0" />
+                      <span className="truncate">Streaming LLM Engine</span>
                     </div>
 
                     <div className="absolute bottom-3 right-3">
                       <button
                         onClick={() => onOpenCaseModal(aiCase)}
-                        className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono text-white bg-[#10b981] hover:bg-[#059669] text-black font-semibold shadow-lg cursor-pointer"
+                        className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-[11px] sm:text-xs font-mono text-black font-semibold bg-[#10b981] hover:bg-[#059669] shadow-lg cursor-pointer shrink-0"
                       >
                         <Play className="w-3 h-3 fill-current" />
-                        <span>Simular Síntese de IA</span>
+                        <span>Simular Síntese</span>
                       </button>
                     </div>
                   </div>
