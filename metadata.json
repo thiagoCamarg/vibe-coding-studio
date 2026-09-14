@@ -1,0 +1,6 @@
+{
+  "name": "Vibe Coding Studio",
+  "description": "Estúdio de desenvolvimento ultrarrápido de software, MVPs, micro-SaaS e automações com IA em poucos dias.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
