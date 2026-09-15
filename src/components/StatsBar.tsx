@@ -3,23 +3,23 @@ import React from 'react';
 export const StatsBar: React.FC = () => {
   const stats = [
     {
-      value: '5 a 10 Dias',
-      label: 'Tempo Médio de Entrega do MVP',
+      value: '5 a 7 Dias',
+      label: 'E Sua Página Já Está Convertendo',
       accentColor: 'text-[#e5e1e4]',
     },
     {
-      value: '10x Mais',
-      label: 'Rápido que Desenvolvimento Tradicional',
+      value: '95+',
+      label: 'Nota no Google PageSpeed (Garantido)',
       accentColor: 'text-[#c0c1ff]',
     },
     {
-      value: '-70%',
-      label: 'Custo Comparado a Agências Convencionais',
+      value: '-80%',
+      label: 'Mais Barato que Agências Tradicionais',
       accentColor: 'text-[#4cd7f6]',
     },
     {
       value: '100% Seu',
-      label: 'Código Limpo, Repo & Infra no Seu Controle',
+      label: 'Código-fonte. Sem Mensalidade.',
       accentColor: 'text-[#4edea3]',
     },
   ];

@@ -301,7 +301,7 @@ export const CaseDetailModal: React.FC<CaseDetailModalProps> = ({
               }}
               className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-6 py-2.5 rounded-full text-xs font-semibold text-white bg-gradient-to-r from-[#6366f1] to-[#4f46e5] hover:brightness-110 shadow-[0_0_20px_rgba(99,102,241,0.5)] cursor-pointer"
             >
-              <span>Quero um App Como Este</span>
+              <span>Quero uma Página Assim</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>

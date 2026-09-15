@@ -19,10 +19,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenProposal }) => {
         <div className="flex flex-col items-center md:items-start text-center md:text-left gap-2">
           <div className="flex items-center gap-2 text-white font-semibold text-sm">
             <span className="text-[#06b6d4]">&lt;/</span>Thiago_Camargo<span className="text-[#06b6d4]">&gt;</span>
-            <span className="text-[#e5e1e4]">AI Product Studio</span>
+            <span className="text-[#e5e1e4]">Landing Page Studio</span>
           </div>
           <p className="text-[11px] text-[#94a3b8] font-sans">
-            © 2025 Thiago Camargo. Desenvolvimento acelerado com IA para startups, builders e empresas.
+            © 2025 Thiago Camargo. Landing pages de alta conversão para quem precisa de resultado, não de reunião.
           </p>
         </div>
 

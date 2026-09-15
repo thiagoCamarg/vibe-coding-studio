@@ -1,10 +1,10 @@
-export type ProjectCategory = 'all' | 'saas' | 'ai' | 'enterprise';
+export type ProjectCategory = 'all' | 'vendas' | 'captura' | 'institucional';
 
 export interface ProjectCase {
   id: string;
-  category: 'saas' | 'ai' | 'enterprise';
+  category: 'vendas' | 'captura' | 'institucional';
   categoryLabel: string;
-  badgeType: 'conversion' | 'enterprise' | 'ai';
+  badgeType: 'conversion' | 'launch' | 'brand';
   title: string;
   description: string;
   tags: string[];
@@ -50,12 +50,16 @@ export interface CompetitiveAdvantage {
 
 export interface PipelineScenario {
   id: string;
+  nicheEmoji: string;
   label: string;
+  category: string;
   briefing: string;
   step1: string;
   step2: string;
   deploy: string;
   techStack: string;
+  turnaroundDays: string;
+  keyMetric: string;
 }
 
 export interface ProposalFormState {

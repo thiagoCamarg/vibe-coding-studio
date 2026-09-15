@@ -27,20 +27,21 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
   }, [initialProjectType]);
 
   const projectTypes = [
-    { label: 'MVP / Micro-SaaS', icon: '🚀' },
-    { label: 'Automação & IA', icon: '🤖' },
-    { label: 'Landing Page', icon: '⚡' },
-    { label: 'Outro', icon: '📦' },
+    { label: 'Página de Vendas', icon: '🚀' },
+    { label: 'Captura de Leads', icon: '🎯' },
+    { label: 'Site Institucional', icon: '🏢' },
+    { label: 'Otimização / Redesign', icon: '🔧' },
   ];
 
-  const budgetOptions = ['R$ 1k - 4k', 'R$ 5k - 10k', 'R$ 10k+', 'A definir'];
+  const budgetOptions = ['R$ 800 - 1.5k', 'R$ 1.5k - 3k', 'R$ 3k - 5k', 'A definir'];
 
   // Calculate dynamic delivery estimate based on inputs
   const getDynamicEstimate = () => {
-    if (formData.projectType.includes('Landing')) return '2 a 4 dias úteis';
-    if (formData.projectType.includes('Automação')) return '4 a 6 dias úteis';
-    if (formData.projectType.includes('MVP')) return '5 a 8 dias úteis';
-    return '5 a 10 dias úteis';
+    if (formData.projectType.includes('Vendas')) return '5 a 7 dias úteis';
+    if (formData.projectType.includes('Captura')) return '3 a 5 dias úteis';
+    if (formData.projectType.includes('Institucional')) return '7 a 10 dias úteis';
+    if (formData.projectType.includes('Otimização')) return '4 a 6 dias úteis';
+    return '5 a 8 dias úteis';
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -85,10 +86,10 @@ Estimativa de entrega: ${getDynamicEstimate()}`;
                 // 05. INICIAR PROJETO
               </div>
               <h2 className="font-syne text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight mb-4">
-                Pronto Para Tirar Sua Ideia do Papel?
+                Sua Página Pronta em Dias, Não Semanas
               </h2>
               <p className="text-sm text-[#94a3b8] leading-relaxed mb-8 font-sans">
-                Me conte sobre seu projeto. Analiso seu escopo e respondo em até 4 horas com uma estimativa de prazo, viabilidade técnica e proposta comercial.
+                Me conta o que você precisa e em 4 horas respondo com prazo, referências visuais e valor exato. Sem compromisso, sem enrolação.
               </p>
 
               {/* Direct channels cards matching reference */}
@@ -160,7 +161,7 @@ Estimativa de entrega: ${getDynamicEstimate()}`;
             {/* Availability Warning */}
             <div className="flex items-center gap-2 text-xs font-mono text-[#c0c1ff]">
               <span className="text-[#06b6d4]">⚡</span>
-              <span>Vagas limitadas para entregas em 5 a 10 dias.</span>
+              <span>🔴 Apenas 2 vagas abertas para entrega nesta semana. Agenda quase cheia.</span>
             </div>
           </div>
 
@@ -264,7 +265,7 @@ Estimativa de entrega: ${getDynamicEstimate()}`;
                       required
                       value={formData.projectSummary}
                       onChange={(e) => setFormData({ ...formData, projectSummary: e.target.value })}
-                      placeholder="Ex: Preciso de um micro-SaaS para clínicas agendarem consultas com WhatsApp e IA..."
+                      placeholder="Ex: Preciso de uma landing page de vendas para meu curso de marketing digital. Preciso de copy, checkout Hotmart e pixel do Meta..."
                       className="w-full px-4 py-3 rounded-lg bg-[#0e0e12] border border-white/10 text-white placeholder:text-white/30 text-xs font-mono focus:outline-none focus:border-[#6366f1] focus:ring-1 focus:ring-[#6366f1] leading-relaxed resize-none"
                     />
                   </div>

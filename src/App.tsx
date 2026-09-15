@@ -82,7 +82,7 @@ export default function App() {
         <Hero
           portraitUrl={imageLinks.heroPortrait}
           onOpenImageManager={() => setIsImageManagerOpen(true)}
-          onStartProject={() => handleScrollToContact('MVP / Micro-SaaS')}
+          onStartProject={(niche) => handleScrollToContact(niche || 'Página de Vendas')}
           onViewServices={handleScrollToServices}
           onPhotoUploaded={(newPhoto) => {
             setImageLinks((prev) => ({ ...prev, heroPortrait: newPhoto }));

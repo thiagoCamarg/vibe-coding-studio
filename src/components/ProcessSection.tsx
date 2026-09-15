@@ -29,11 +29,11 @@ export const ProcessSection: React.FC = () => {
               // 02. PROCESSO DE ENTREGA ÁGIL
             </div>
             <h2 className="font-syne text-3xl sm:text-4xl font-bold text-white tracking-tight">
-              Como Funciona: Do Briefing ao Produto no Ar
+              Do Briefing à Página No Ar em 4 Passos
             </h2>
           </div>
           <p className="text-sm sm:text-base text-[#94a3b8] max-w-md leading-relaxed font-sans">
-            Metodologia enxuta orientada a resultados: eliminamos burocracia para colocar seu produto na mão do cliente em dias.
+            Sem burocracia, sem surpresas. Você aprova cada etapa e no final sua landing page já está pronta pra receber tráfego pago.
           </p>
         </div>
 

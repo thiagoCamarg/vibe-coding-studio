@@ -38,11 +38,11 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
               // 01. SERVIÇOS &amp; ENTREGAS
             </div>
             <h2 className="font-syne text-3xl sm:text-4xl font-bold text-white tracking-tight">
-              O Que Posso Construir Para o Seu Negócio
+              Tipos de Landing Page Que Eu Crio
             </h2>
           </div>
           <p className="text-sm sm:text-base text-[#94a3b8] max-w-md leading-relaxed font-sans">
-            Produtos digitais completos, rápidos e enxutos projetados para testar tração, automatizar processos e gerar faturamento imediato.
+            Páginas de vendas, captura de leads, sites institucionais e otimização de páginas que já existem. Todas feitas pra converter, não só pra ficar bonita.
           </p>
         </div>
 

@@ -28,10 +28,10 @@ export const AdvantagesSection: React.FC = () => {
             // 04. VANTAGEM COMPETITIVA
           </div>
           <h2 className="font-syne text-3xl sm:text-4xl lg:text-[40px] font-bold text-white tracking-tight mb-4">
-            Por Que Escolher Vibe Coding Para o Seu Negócio?
+            Por Que Não Usar Wix, WordPress ou Canva?
           </h2>
           <p className="text-sm sm:text-base text-[#94a3b8] leading-relaxed font-sans">
-            O modelo tradicional de software é lento, inchado e custa fortunas antes do primeiro cliente testar. Aqui construímos com velocidade de startup.
+            Templates são genéricos, lentos e têm cara de "fiz sozinho". Agências cobram uma fortuna. Aqui você tem página profissional, rápida e sua — pelo preço justo.
           </p>
         </div>
 
