@@ -17,12 +17,18 @@ export const ImageManagerModal: React.FC<ImageManagerModalProps> = ({
   currentLinks,
   onUpdateLinks,
 }) => {
-  if (!isOpen) return null;
-
   const [formLinks, setFormLinks] = useState<DirectImageLinks>(currentLinks);
   const [savedSuccess, setSavedSuccess] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  React.useEffect(() => {
+    if (isOpen) {
+      setFormLinks(currentLinks);
+    }
+  }, [currentLinks, isOpen]);
+
+  if (!isOpen) return null;
 
   // Curated presets for quick test
   const portraitPresets = [
@@ -108,26 +114,26 @@ export const ImageManagerModal: React.FC<ImageManagerModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md overflow-y-auto">
-      <div className="relative w-full max-w-2xl rounded-2xl bg-[#121216] border border-white/15 p-6 sm:p-8 shadow-2xl my-8">
+      <div className="relative w-full max-w-2xl rounded-2xl bg-[#111115] border border-white/10 p-6 sm:p-8 shadow-2xl my-8">
         
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 p-2 rounded-lg bg-white/5 hover:bg-white/10 text-[#94a3b8] hover:text-white transition-colors cursor-pointer"
+          className="absolute top-5 right-5 p-2 rounded-lg bg-white/5 hover:bg-white/10 text-text-muted hover:text-white transition-colors cursor-pointer"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Modal Header */}
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-10 h-10 rounded-xl bg-[#06b6d4]/15 border border-[#06b6d4]/30 flex items-center justify-center">
-            <ImageIcon className="w-5 h-5 text-[#06b6d4]" />
+          <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center">
+            <ImageIcon className="w-5 h-5 text-white/90" />
           </div>
           <div>
             <h2 className="font-syne text-xl sm:text-2xl font-bold text-white">
               Gerenciador de Links Diretos das Imagens
             </h2>
-            <p className="text-xs font-mono text-[#94a3b8]">
+            <p className="text-xs font-mono text-text-muted">
               Faça upload do seu arquivo de foto ou configure links diretos para a renderização sem moldura.
             </p>
           </div>
@@ -136,10 +142,10 @@ export const ImageManagerModal: React.FC<ImageManagerModalProps> = ({
         <form onSubmit={handleSave} className="space-y-5">
           
           {/* 1. Hero Portrait with Direct File Upload & Auto-cutout */}
-          <div className="p-4 rounded-xl bg-[#0e0e12] border border-white/10 space-y-3">
+          <div className="p-4 rounded-xl bg-[#0c0c0f] border border-white/10 space-y-3">
             <div className="flex items-center justify-between">
               <label className="font-mono text-xs font-semibold text-white flex items-center gap-1.5">
-                <LinkIcon className="w-3.5 h-3.5 text-[#06b6d4]" />
+                <LinkIcon className="w-3.5 h-3.5 text-white/70" />
                 Foto do Perfil no Hero (Sem Moldura &amp; Fundo Transparente)
               </label>
               <span className="text-[10px] font-mono text-[#10b981]">Integração Ativa</span>
@@ -147,7 +153,7 @@ export const ImageManagerModal: React.FC<ImageManagerModalProps> = ({
 
             <div className="flex items-start gap-4">
               {/* Thumbnail with dark background check pattern */}
-              <div className="w-16 h-20 rounded-lg bg-[#14141a] border border-white/10 overflow-hidden flex-shrink-0 flex items-center justify-center relative group/thumb">
+              <div className="w-16 h-20 rounded-lg bg-[#111115] border border-white/10 overflow-hidden flex-shrink-0 flex items-center justify-center relative group/thumb">
                 <img
                   src={formLinks.heroPortrait}
                   alt="Preview Hero"
@@ -159,7 +165,7 @@ export const ImageManagerModal: React.FC<ImageManagerModalProps> = ({
                 />
                 {isProcessing && (
                   <div className="absolute inset-0 bg-black/70 flex items-center justify-center">
-                    <RefreshCw className="w-4 h-4 text-[#06b6d4] animate-spin" />
+                    <RefreshCw className="w-4 h-4 text-white animate-spin" />
                   </div>
                 )}
               </div>
@@ -177,9 +183,9 @@ export const ImageManagerModal: React.FC<ImageManagerModalProps> = ({
                   <button
                     type="button"
                     onClick={() => fileInputRef.current?.click()}
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono text-white bg-[#06b6d4]/20 hover:bg-[#06b6d4]/30 border border-[#06b6d4]/40 cursor-pointer"
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono text-white bg-white/10 hover:bg-white/15 border border-white/10 cursor-pointer"
                   >
-                    <Upload className="w-3.5 h-3.5 text-[#06b6d4]" />
+                    <Upload className="w-3.5 h-3.5 text-white/80" />
                     <span>Carregar Foto do Computador (PNG/JPG)</span>
                   </button>
 
@@ -187,10 +193,10 @@ export const ImageManagerModal: React.FC<ImageManagerModalProps> = ({
                     type="button"
                     onClick={handleApplyWhiteBgRemoval}
                     disabled={isProcessing}
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono text-[#c0c1ff] bg-white/[0.05] hover:bg-white/10 border border-white/10 cursor-pointer"
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono text-text-secondary bg-white/[0.05] hover:bg-white/10 border border-white/10 cursor-pointer"
                     title="Remove fundo branco da imagem atual"
                   >
-                    <Wand2 className="w-3.5 h-3.5 text-[#6366f1]" />
+                    <Wand2 className="w-3.5 h-3.5 text-white/80" />
                     <span>Remover Fundo Branco</span>
                   </button>
                 </div>
@@ -200,7 +206,7 @@ export const ImageManagerModal: React.FC<ImageManagerModalProps> = ({
                   value={formLinks.heroPortrait}
                   onChange={(e) => setFormLinks({ ...formLinks, heroPortrait: e.target.value })}
                   placeholder="URL direta ou Data URI da imagem"
-                  className="w-full px-3 py-2 rounded-lg bg-[#14141a] border border-white/10 text-xs font-mono text-[#acedff] focus:outline-none focus:border-[#06b6d4]"
+                  className="w-full px-3 py-2 rounded-lg bg-[#111115] border border-white/10 text-xs font-mono text-white focus:outline-none focus:border-white/40"
                 />
                 
                 {/* Quick Presets */}
@@ -210,7 +216,7 @@ export const ImageManagerModal: React.FC<ImageManagerModalProps> = ({
                       type="button"
                       key={idx}
                       onClick={() => setFormLinks({ ...formLinks, heroPortrait: preset.url })}
-                      className="px-2 py-0.5 rounded text-[10px] font-mono bg-white/[0.05] hover:bg-white/10 text-[#c7c4d7] hover:text-white border border-white/5 cursor-pointer"
+                      className="px-2 py-0.5 rounded text-[10px] font-mono bg-white/[0.05] hover:bg-white/10 text-text-secondary hover:text-white border border-white/5 cursor-pointer"
                     >
                       {preset.label}
                     </button>
@@ -221,14 +227,14 @@ export const ImageManagerModal: React.FC<ImageManagerModalProps> = ({
           </div>
 
           {/* 2. Clínica Odonto & Estética */}
-          <div className="p-4 rounded-xl bg-[#0e0e12] border border-white/10 space-y-3">
+          <div className="p-4 rounded-xl bg-[#0c0c0f] border border-white/10 space-y-3">
             <label className="font-mono text-xs font-semibold text-white flex items-center gap-1.5">
-              <LinkIcon className="w-3.5 h-3.5 text-[#6366f1]" />
+              <LinkIcon className="w-3.5 h-3.5 text-white/70" />
               Imagem Mockup: Clínica Odonto &amp; Estética
             </label>
 
             <div className="flex items-center gap-4">
-              <div className="w-14 h-14 rounded-lg bg-[#18181f] border border-white/10 overflow-hidden flex-shrink-0">
+              <div className="w-14 h-14 rounded-lg bg-[#18181e] border border-white/10 overflow-hidden flex-shrink-0">
                 <img
                   src={formLinks.caseAnalytics}
                   alt="Preview Clínica Odonto"
@@ -242,20 +248,20 @@ export const ImageManagerModal: React.FC<ImageManagerModalProps> = ({
                 value={formLinks.caseAnalytics}
                 onChange={(e) => setFormLinks({ ...formLinks, caseAnalytics: e.target.value })}
                 placeholder="URL direta ou caminho (/case-odonto.jpg)"
-                className="flex-1 px-3 py-2 rounded-lg bg-[#14141a] border border-white/10 text-xs font-mono text-[#acedff] focus:outline-none focus:border-[#6366f1]"
+                className="flex-1 px-3 py-2 rounded-lg bg-[#111115] border border-white/10 text-xs font-mono text-white focus:outline-none focus:border-white/40"
               />
             </div>
           </div>
 
           {/* 3. Advocacia Empresarial */}
-          <div className="p-4 rounded-xl bg-[#0e0e12] border border-white/10 space-y-3">
+          <div className="p-4 rounded-xl bg-[#0c0c0f] border border-white/10 space-y-3">
             <label className="font-mono text-xs font-semibold text-white flex items-center gap-1.5">
-              <LinkIcon className="w-3.5 h-3.5 text-[#10b981]" />
+              <LinkIcon className="w-3.5 h-3.5 text-white/70" />
               Imagem Mockup: Advocacia Empresarial &amp; Tributária
             </label>
 
             <div className="flex items-center gap-4">
-              <div className="w-14 h-14 rounded-lg bg-[#18181f] border border-white/10 overflow-hidden flex-shrink-0">
+              <div className="w-14 h-14 rounded-lg bg-[#18181e] border border-white/10 overflow-hidden flex-shrink-0">
                 <img
                   src={formLinks.caseTaskFlow}
                   alt="Preview Advocacia"
@@ -269,20 +275,20 @@ export const ImageManagerModal: React.FC<ImageManagerModalProps> = ({
                 value={formLinks.caseTaskFlow}
                 onChange={(e) => setFormLinks({ ...formLinks, caseTaskFlow: e.target.value })}
                 placeholder="URL direta da imagem da Advocacia"
-                className="flex-1 px-3 py-2 rounded-lg bg-[#14141a] border border-white/10 text-xs font-mono text-[#acedff] focus:outline-none focus:border-[#10b981]"
+                className="flex-1 px-3 py-2 rounded-lg bg-[#111115] border border-white/10 text-xs font-mono text-white focus:outline-none focus:border-white/40"
               />
             </div>
           </div>
 
           {/* 4. Imóveis de Luxo & Arquitetura */}
-          <div className="p-4 rounded-xl bg-[#0e0e12] border border-white/10 space-y-3">
+          <div className="p-4 rounded-xl bg-[#0c0c0f] border border-white/10 space-y-3">
             <label className="font-mono text-xs font-semibold text-white flex items-center gap-1.5">
-              <LinkIcon className="w-3.5 h-3.5 text-[#c0c1ff]" />
+              <LinkIcon className="w-3.5 h-3.5 text-white/70" />
               Imagem Mockup: Imóveis de Luxo &amp; Arquitetura
             </label>
 
             <div className="flex items-center gap-4">
-              <div className="w-14 h-14 rounded-lg bg-[#18181f] border border-white/10 overflow-hidden flex-shrink-0">
+              <div className="w-14 h-14 rounded-lg bg-[#18181e] border border-white/10 overflow-hidden flex-shrink-0">
                 <img
                   src={formLinks.caseNeuroDoc}
                   alt="Preview Imóveis de Luxo"
@@ -296,7 +302,7 @@ export const ImageManagerModal: React.FC<ImageManagerModalProps> = ({
                 value={formLinks.caseNeuroDoc}
                 onChange={(e) => setFormLinks({ ...formLinks, caseNeuroDoc: e.target.value })}
                 placeholder="URL direta da imagem dos Imóveis"
-                className="flex-1 px-3 py-2 rounded-lg bg-[#14141a] border border-white/10 text-xs font-mono text-[#acedff] focus:outline-none focus:border-[#c0c1ff]"
+                className="flex-1 px-3 py-2 rounded-lg bg-[#111115] border border-white/10 text-xs font-mono text-white focus:outline-none focus:border-white/40"
               />
             </div>
           </div>
@@ -306,7 +312,7 @@ export const ImageManagerModal: React.FC<ImageManagerModalProps> = ({
             <button
               type="button"
               onClick={handleResetDefaults}
-              className="flex items-center gap-1.5 text-xs font-mono text-[#94a3b8] hover:text-white cursor-pointer"
+              className="flex items-center gap-1.5 text-xs font-mono text-text-muted hover:text-white cursor-pointer"
             >
               <RefreshCw className="w-3.5 h-3.5" />
               <span>Restaurar Padrões</span>
@@ -316,14 +322,14 @@ export const ImageManagerModal: React.FC<ImageManagerModalProps> = ({
               <button
                 type="button"
                 onClick={onClose}
-                className="px-4 py-2 rounded-lg text-xs font-mono text-[#94a3b8] hover:text-white cursor-pointer"
+                className="px-4 py-2 rounded-lg text-xs font-mono text-text-muted hover:text-white cursor-pointer"
               >
                 Cancelar
               </button>
 
               <button
                 type="submit"
-                className="flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold text-black bg-[#06b6d4] hover:bg-[#0891b2] shadow-lg cursor-pointer"
+                className="flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold text-black bg-white hover:bg-neutral-200 shadow-lg cursor-pointer"
               >
                 {savedSuccess ? (
                   <>

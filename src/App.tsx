@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { StatsBar } from './components/StatsBar';
@@ -8,10 +8,16 @@ import { CasesSection } from './components/CasesSection';
 import { AdvantagesSection } from './components/AdvantagesSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
-import { CaseDetailModal } from './components/CaseDetailModal';
-import { ImageManagerModal } from './components/ImageManagerModal';
 import { CASES_DATA, DEFAULT_DIRECT_IMAGES } from './data/portfolioData';
 import { ProjectCase, DirectImageLinks } from './types';
+
+// Code-splitting non-critical modals for optimal Core Web Vitals & PageSpeed
+const CaseDetailModal = lazy(() => 
+  import('./components/CaseDetailModal').then(module => ({ default: module.CaseDetailModal }))
+);
+const ImageManagerModal = lazy(() => 
+  import('./components/ImageManagerModal').then(module => ({ default: module.ImageManagerModal }))
+);
 
 export default function App() {
   // Direct image links state with local storage fallback
@@ -47,7 +53,7 @@ export default function App() {
   const [isImageManagerOpen, setIsImageManagerOpen] = useState(false);
 
   // Selected project type for contact proposal form
-  const [prefilledServiceType, setPrefilledServiceType] = useState<string>('MVP / Micro-SaaS');
+  const [prefilledServiceType, setPrefilledServiceType] = useState<string>('Página de Vendas');
 
   const handleUpdateImageLinks = (newLinks: DirectImageLinks) => {
     setImageLinks(newLinks);
@@ -75,8 +81,19 @@ export default function App() {
     }
   };
 
+  // Floating WhatsApp button visibility
+  const [showFloatingWhatsApp, setShowFloatingWhatsApp] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowFloatingWhatsApp(window.scrollY > 350);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-[#0a0a0c] text-[#e5e1e4] flex flex-col selection:bg-[#6366f1]/30 selection:text-[#acedff]">
+    <div className="min-h-screen bg-[#09090b] text-[#fafafa] flex flex-col selection:bg-white/20 selection:text-white">
       
       {/* Sticky Global Navigation */}
       <Navbar
@@ -133,20 +150,51 @@ export default function App() {
       {/* Global Terminal-style Footer */}
       <Footer onOpenProposal={() => handleScrollToContact()} />
 
-      {/* Case Interactive Preview Modal */}
-      <CaseDetailModal
-        projectCase={activeCaseModal}
-        onClose={() => setActiveCaseModal(null)}
-        onSelectForProposal={(title) => handleScrollToContact(title)}
-      />
+      {/* Floating High-Conversion WhatsApp Quick Trigger */}
+      {showFloatingWhatsApp && (
+        <aside
+          aria-label="Atendimento Rápido"
+          className="fixed bottom-6 right-6 z-40 flex items-center animate-fade-in"
+        >
+          <a
+            href="https://wa.me/5511961060719?text=Ol%C3%A1%2C%20Thiago!%20Vi%20seu%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20uma%20landing%20page."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center gap-2.5 px-4 py-3 rounded-full bg-[#10b981] hover:bg-[#0da673] text-white shadow-[0_4px_25px_rgba(16,185,129,0.45)] hover:shadow-[0_4px_35px_rgba(16,185,129,0.65)] transition-all hover:scale-105 cursor-pointer font-sans"
+            title="Falar no WhatsApp com Thiago"
+          >
+            <span className="relative flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" />
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-white" />
+            </span>
+            <span className="text-xs font-bold font-mono tracking-wide">
+              WhatsApp Direto
+            </span>
+          </a>
+        </aside>
+      )}
 
-      {/* Direct Image Links Manager Modal */}
-      <ImageManagerModal
-        isOpen={isImageManagerOpen}
-        onClose={() => setIsImageManagerOpen(false)}
-        currentLinks={imageLinks}
-        onUpdateLinks={handleUpdateImageLinks}
-      />
+      {/* Case Mockup Lightbox Modal (Lazy Loaded) */}
+      {activeCaseModal && (
+        <Suspense fallback={null}>
+          <CaseDetailModal
+            projectCase={activeCaseModal}
+            onClose={() => setActiveCaseModal(null)}
+          />
+        </Suspense>
+      )}
+
+      {/* Direct Image Links Manager Modal (Lazy Loaded) */}
+      {isImageManagerOpen && (
+        <Suspense fallback={null}>
+          <ImageManagerModal
+            isOpen={isImageManagerOpen}
+            onClose={() => setIsImageManagerOpen(false)}
+            currentLinks={imageLinks}
+            onUpdateLinks={handleUpdateImageLinks}
+          />
+        </Suspense>
+      )}
 
     </div>
   );

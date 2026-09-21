@@ -6,17 +6,16 @@
   --font-sans: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
-  --color-canvas: #0a0a0c;
-  --color-surface-1: #121216;
-  --color-surface-2: #18181f;
-  --color-surface-3: #201f28;
+  --color-canvas: #09090b;
+  --color-surface-1: #111115;
+  --color-surface-2: #18181e;
+  --color-surface-3: #22222a;
   --color-border-subtle: rgba(255, 255, 255, 0.08);
-  --color-primary: #06b6d4;
-  --color-secondary: #6366f1;
-  --color-accent-green: #10b981;
-  --color-text-primary: #e5e1e4;
-  --color-text-muted: #94a3b8;
-  --color-text-highlight: #acedff;
+  --color-accent-emerald: #10b981;
+  --color-text-primary: #fafafa;
+  --color-text-secondary: #a1a1aa;
+  --color-text-muted: #71717a;
+  --color-text-highlight: #ffffff;
 }
 
 :root {
@@ -30,43 +29,48 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background-color: #0a0a0c;
-  color: #e5e1e4;
+  background-color: #09090b;
+  color: #fafafa;
   overflow-x: clip;
   min-height: 100vh;
 }
 
 ::selection {
-  background-color: rgba(99, 102, 241, 0.35);
-  color: #acedff;
-}
-
-/* Custom glow and backdrop effects */
-.glow-indigo {
-  box-shadow: 0 0 35px -5px rgba(99, 102, 241, 0.25);
-}
-
-.glow-cyan {
-  box-shadow: 0 0 30px -5px rgba(6, 182, 212, 0.25);
-}
-
-.glow-emerald {
-  box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.25);
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
 }
 
 /* Scrollbar styling */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0a0c;
+  background: #09090b;
 }
 ::-webkit-scrollbar-thumb {
-  background: #201f28;
+  background: #27272a;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #353445;
+  background: #3f3f46;
 }
+
+/* Google PageSpeed & Core Web Vitals: Off-screen Rendering Optimization */
+#servicos,
+#processo,
+#cases,
+#vantagens,
+#contato {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 700px;
+}
+
+/* Text rendering optimization */
+p, span, h1, h2, h3, h4, h5, h6, a, button {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 

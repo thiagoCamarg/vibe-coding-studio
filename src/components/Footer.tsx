@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 interface FooterProps {
   onOpenProposal: () => void;
@@ -12,51 +12,54 @@ export const Footer: React.FC<FooterProps> = ({ onOpenProposal }) => {
   };
 
   return (
-    <footer className="border-t border-white/[0.08] bg-[#0a0a0c] py-12 text-[#94a3b8] font-mono text-xs">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+    <footer className="border-t border-white/[0.08] bg-[#09090b] py-14 text-text-muted font-sans text-xs">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-8">
         
         {/* Brand and Copyright */}
-        <div className="flex flex-col items-center md:items-start text-center md:text-left gap-2">
-          <div className="flex items-center gap-2 text-white font-semibold text-sm">
-            <span className="text-[#06b6d4]">&lt;/</span>Thiago_Camargo<span className="text-[#06b6d4]">&gt;</span>
-            <span className="text-[#e5e1e4]">Landing Page Studio</span>
+        <div className="flex flex-col items-center md:items-start text-center md:text-left gap-2.5">
+          <div className="flex items-center gap-3">
+            <span className="font-syne font-bold text-sm tracking-tight text-white uppercase">
+              Thiago Camargo
+            </span>
+            <span className="h-3 w-px bg-white/10" />
+            <span className="font-mono text-[11px] text-text-muted uppercase tracking-wider">
+              Landing Page Studio
+            </span>
           </div>
-          <p className="text-[11px] text-[#94a3b8] font-sans">
-            © 2025 Thiago Camargo. Landing pages de alta conversão para quem precisa de resultado, não de reunião.
+          <p className="text-[12px] text-text-muted/80 max-w-md font-light leading-relaxed">
+            © {new Date().getFullYear()} Thiago Camargo. Engenharia de landing pages de alta conversão para negócios que priorizam performance e resultado.
           </p>
         </div>
 
         {/* Links & CTA */}
-        <div className="flex flex-wrap items-center justify-center gap-6">
+        <div className="flex flex-wrap items-center justify-center gap-6 font-mono text-[11px] uppercase tracking-wider">
           <button
             onClick={() => handleScrollTo('servicos')}
             className="hover:text-white transition-colors cursor-pointer"
           >
-            serviços
+            Serviços
           </button>
-          <span className="text-white/20 select-none">•</span>
+          <span className="text-white/15 select-none">/</span>
           <button
             onClick={() => handleScrollTo('cases')}
             className="hover:text-white transition-colors cursor-pointer"
           >
-            cases
+            Cases
           </button>
-          <span className="text-white/20 select-none">•</span>
-          <a
-            href="https://github.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-white transition-colors"
+          <span className="text-white/15 select-none">/</span>
+          <button
+            onClick={() => handleScrollTo('contato')}
+            className="hover:text-white transition-colors cursor-pointer"
           >
-            github
-          </a>
+            Contato
+          </button>
 
           <button
             onClick={onOpenProposal}
-            className="ml-2 flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold text-white bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 transition-all cursor-pointer"
+            className="ml-2 inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-[11px] font-semibold text-black bg-white hover:bg-white/90 shadow-sm transition-all cursor-pointer"
           >
             <span>Solicitar Orçamento</span>
-            <ArrowRight className="w-3 h-3 text-[#06b6d4]" />
+            <ArrowUpRight className="w-3.5 h-3.5" />
           </button>
         </div>
 
@@ -64,3 +67,4 @@ export const Footer: React.FC<FooterProps> = ({ onOpenProposal }) => {
     </footer>
   );
 };
+

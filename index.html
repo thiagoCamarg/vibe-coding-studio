@@ -20,13 +20,20 @@
     <meta name="twitter:title" content="Thiago Camargo — Landing Pages de Alta Conversão em Até 7 Dias" />
     <meta name="twitter:description" content="Landing pages de vendas, captura de leads e sites institucionais prontos em até 7 dias úteis. Copy persuasiva, design premium e PageSpeed 95+." />
 
-    <!-- Favicon: Terminal Code Brackets SVG Icon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a0a0c'/%3E%3Cpath d='M10 11l-5 5 5 5M22 11l5 5-5 5M18 9l-4 14' stroke='%2306b6d4' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E" />
+    <!-- Favicon: Terminal Code Brackets SVG Icon matching brand emerald (#10b981) -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <!-- Google Fonts -->
+    <!-- Preload LCP Hero Image -->
+    <link rel="preload" as="image" href="/hero-portrait.png" type="image/png" fetchpriority="high" />
+
+    <!-- Google Fonts Preconnect & Non-blocking Load -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap">
+    </noscript>
   </head>
   <body class="bg-[#0a0a0c] text-[#e5e1e4] antialiased">
     <div id="root"></div>
