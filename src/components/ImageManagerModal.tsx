@@ -220,18 +220,18 @@ export const ImageManagerModal: React.FC<ImageManagerModalProps> = ({
             </div>
           </div>
 
-          {/* 2. SaaS Analytics Pro */}
+          {/* 2. Clínica Odonto & Estética */}
           <div className="p-4 rounded-xl bg-[#0e0e12] border border-white/10 space-y-3">
             <label className="font-mono text-xs font-semibold text-white flex items-center gap-1.5">
               <LinkIcon className="w-3.5 h-3.5 text-[#6366f1]" />
-              Imagem Mockup: SaaS Analytics Pro
+              Imagem Mockup: Clínica Odonto &amp; Estética
             </label>
 
             <div className="flex items-center gap-4">
               <div className="w-14 h-14 rounded-lg bg-[#18181f] border border-white/10 overflow-hidden flex-shrink-0">
                 <img
                   src={formLinks.caseAnalytics}
-                  alt="Preview Analytics"
+                  alt="Preview Clínica Odonto"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
                 />
@@ -241,24 +241,24 @@ export const ImageManagerModal: React.FC<ImageManagerModalProps> = ({
                 type="url"
                 value={formLinks.caseAnalytics}
                 onChange={(e) => setFormLinks({ ...formLinks, caseAnalytics: e.target.value })}
-                placeholder="URL direta da imagem do dashboard"
+                placeholder="URL direta ou caminho (/case-odonto.jpg)"
                 className="flex-1 px-3 py-2 rounded-lg bg-[#14141a] border border-white/10 text-xs font-mono text-[#acedff] focus:outline-none focus:border-[#6366f1]"
               />
             </div>
           </div>
 
-          {/* 3. TaskFlow AI */}
+          {/* 3. Advocacia Empresarial */}
           <div className="p-4 rounded-xl bg-[#0e0e12] border border-white/10 space-y-3">
             <label className="font-mono text-xs font-semibold text-white flex items-center gap-1.5">
               <LinkIcon className="w-3.5 h-3.5 text-[#10b981]" />
-              Imagem Mockup: TaskFlow AI &amp; Supabase
+              Imagem Mockup: Advocacia Empresarial &amp; Tributária
             </label>
 
             <div className="flex items-center gap-4">
               <div className="w-14 h-14 rounded-lg bg-[#18181f] border border-white/10 overflow-hidden flex-shrink-0">
                 <img
                   src={formLinks.caseTaskFlow}
-                  alt="Preview TaskFlow"
+                  alt="Preview Advocacia"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
                 />
@@ -268,24 +268,24 @@ export const ImageManagerModal: React.FC<ImageManagerModalProps> = ({
                 type="url"
                 value={formLinks.caseTaskFlow}
                 onChange={(e) => setFormLinks({ ...formLinks, caseTaskFlow: e.target.value })}
-                placeholder="URL direta da imagem do TaskFlow"
+                placeholder="URL direta da imagem da Advocacia"
                 className="flex-1 px-3 py-2 rounded-lg bg-[#14141a] border border-white/10 text-xs font-mono text-[#acedff] focus:outline-none focus:border-[#10b981]"
               />
             </div>
           </div>
 
-          {/* 4. NeuroDoc */}
+          {/* 4. Imóveis de Luxo & Arquitetura */}
           <div className="p-4 rounded-xl bg-[#0e0e12] border border-white/10 space-y-3">
             <label className="font-mono text-xs font-semibold text-white flex items-center gap-1.5">
               <LinkIcon className="w-3.5 h-3.5 text-[#c0c1ff]" />
-              Imagem Mockup: NeuroDoc (LLM Synthesis)
+              Imagem Mockup: Imóveis de Luxo &amp; Arquitetura
             </label>
 
             <div className="flex items-center gap-4">
               <div className="w-14 h-14 rounded-lg bg-[#18181f] border border-white/10 overflow-hidden flex-shrink-0">
                 <img
                   src={formLinks.caseNeuroDoc}
-                  alt="Preview NeuroDoc"
+                  alt="Preview Imóveis de Luxo"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
                 />
@@ -295,7 +295,7 @@ export const ImageManagerModal: React.FC<ImageManagerModalProps> = ({
                 type="url"
                 value={formLinks.caseNeuroDoc}
                 onChange={(e) => setFormLinks({ ...formLinks, caseNeuroDoc: e.target.value })}
-                placeholder="URL direta da imagem do NeuroDoc"
+                placeholder="URL direta da imagem dos Imóveis"
                 className="flex-1 px-3 py-2 rounded-lg bg-[#14141a] border border-white/10 text-xs font-mono text-[#acedff] focus:outline-none focus:border-[#c0c1ff]"
               />
             </div>

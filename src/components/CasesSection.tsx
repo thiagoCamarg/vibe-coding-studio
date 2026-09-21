@@ -172,7 +172,7 @@ export const CasesSection: React.FC<CasesSectionProps> = ({
                   {/* Floating Mockup Elements */}
                   <div className="absolute inset-x-3 top-3 flex items-center justify-between pointer-events-none">
                     <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-black/70 backdrop-blur-md border border-white/10 text-[10px] font-mono text-white">
-                      <span>vendas.landing // live</span>
+                      <span>odonto.estetica // live</span>
                     </div>
                     <div className="flex items-center gap-1 px-2.5 py-1 rounded-md bg-[#10b981]/20 border border-[#10b981]/40 text-[10px] font-mono text-[#10b981]">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#10b981] animate-pulse" />
@@ -185,17 +185,17 @@ export const CasesSection: React.FC<CasesSectionProps> = ({
                     <div className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/15 text-[11px] sm:text-xs font-mono text-[#10b981] truncate min-w-0">
                       <span className="w-2 h-2 rounded-full bg-[#10b981] shadow-[0_0_6px_#10b981] shrink-0" />
                       <span className="truncate">
-                      <span className="hidden sm:inline">Convertendo Vendas Diariamente</span>
-                        <span className="sm:hidden">Convertendo</span>
+                        <span className="hidden sm:inline">Agendamentos Diários no WhatsApp</span>
+                        <span className="sm:hidden">Agendamentos</span>
                       </span>
                     </div>
 
                     <button
                       onClick={() => onOpenCaseModal(salesCase)}
-                      className="px-2.5 sm:px-3 py-1.5 rounded-lg text-[11px] sm:text-xs font-mono text-white bg-[#6366f1] hover:bg-[#4f46e5] shadow-lg flex items-center gap-1.5 cursor-pointer shrink-0"
+                      className="px-2.5 sm:px-3 py-1.5 rounded-lg text-[11px] sm:text-xs font-mono text-white bg-[#6366f1] hover:bg-[#4f46e5] shadow-lg flex items-center gap-1.5 cursor-pointer shrink-0 transition-all hover:scale-105"
                     >
-                      <Play className="w-3 h-3 fill-current" />
-                      <span>Testar Demo</span>
+                      <Eye className="w-3.5 h-3.5" />
+                      <span>Ver Site</span>
                     </button>
                   </div>
                 </div>
@@ -261,10 +261,10 @@ export const CasesSection: React.FC<CasesSectionProps> = ({
                   {/* Floating status */}
                   <div className="absolute inset-x-3 top-3 flex items-center justify-between pointer-events-none">
                     <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-black/70 backdrop-blur-md border border-white/10 text-[10px] font-mono text-white">
-                      <span>captura.waitlist // live</span>
+                      <span>advocacia.tributaria // live</span>
                     </div>
                     <div className="flex items-center gap-1 px-2.5 py-1 rounded-md bg-[#06b6d4]/20 border border-[#06b6d4]/40 text-[10px] font-mono text-[#06b6d4]">
-                      <span>2.400+ Leads</span>
+                      <span>Leads Qualificados</span>
                     </div>
                   </div>
 
@@ -272,17 +272,17 @@ export const CasesSection: React.FC<CasesSectionProps> = ({
                     <div className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/15 text-[11px] sm:text-xs font-mono text-[#acedff] truncate min-w-0">
                       <span className="w-2 h-2 rounded-full bg-[#06b6d4] shadow-[0_0_6px_#06b6d4] shrink-0" />
                       <span className="truncate">
-                        <span className="hidden sm:inline">Captando Leads Automaticamente</span>
-                        <span className="sm:hidden">Captando Leads</span>
+                        <span className="hidden sm:inline">Triagem &amp; Captação Automática</span>
+                        <span className="sm:hidden">Triagem Ativa</span>
                       </span>
                     </div>
 
                     <button
                       onClick={() => onOpenCaseModal(captureCase)}
-                      className="px-2.5 sm:px-3 py-1.5 rounded-lg text-[11px] sm:text-xs font-mono text-black font-semibold bg-[#06b6d4] hover:bg-[#0891b2] shadow-lg flex items-center gap-1.5 cursor-pointer shrink-0"
+                      className="px-2.5 sm:px-3 py-1.5 rounded-lg text-[11px] sm:text-xs font-mono text-black font-semibold bg-[#06b6d4] hover:bg-[#0891b2] shadow-lg flex items-center gap-1.5 cursor-pointer shrink-0 transition-all hover:scale-105"
                     >
-                      <Play className="w-3 h-3 fill-current" />
-                      <span>Testar Demo</span>
+                      <Eye className="w-3.5 h-3.5" />
+                      <span>Ver Site</span>
                     </button>
                   </div>
                 </div>
@@ -376,10 +376,10 @@ export const CasesSection: React.FC<CasesSectionProps> = ({
                     <div className="absolute bottom-3 right-3">
                       <button
                         onClick={() => onOpenCaseModal(institutionalCase)}
-                        className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-[11px] sm:text-xs font-mono text-black font-semibold bg-[#10b981] hover:bg-[#059669] shadow-lg cursor-pointer shrink-0"
+                        className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-[11px] sm:text-xs font-mono text-black font-semibold bg-[#10b981] hover:bg-[#059669] shadow-lg cursor-pointer shrink-0 transition-all hover:scale-105"
                       >
-                        <Play className="w-3 h-3 fill-current" />
-                        <span>Ver Detalhes</span>
+                        <Eye className="w-3.5 h-3.5" />
+                        <span>Ver Site</span>
                       </button>
                     </div>
                   </div>

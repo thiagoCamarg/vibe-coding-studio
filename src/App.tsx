@@ -23,6 +23,15 @@ export default function App() {
         if (!parsed.heroPortrait || parsed.heroPortrait.includes('unsplash.com') || parsed.heroPortrait.includes('hero-portrait.jpg')) {
           parsed.heroPortrait = DEFAULT_DIRECT_IMAGES.heroPortrait;
         }
+        if (!parsed.caseAnalytics || parsed.caseAnalytics.includes('unsplash.com') || parsed.caseAnalytics.includes('460925895917')) {
+          parsed.caseAnalytics = DEFAULT_DIRECT_IMAGES.caseAnalytics;
+        }
+        if (!parsed.caseTaskFlow || parsed.caseTaskFlow.includes('unsplash.com') || parsed.caseTaskFlow.includes('551288049')) {
+          parsed.caseTaskFlow = DEFAULT_DIRECT_IMAGES.caseTaskFlow;
+        }
+        if (!parsed.caseNeuroDoc || parsed.caseNeuroDoc.includes('unsplash.com') || parsed.caseNeuroDoc.includes('497366216548')) {
+          parsed.caseNeuroDoc = DEFAULT_DIRECT_IMAGES.caseNeuroDoc;
+        }
         return { ...DEFAULT_DIRECT_IMAGES, ...parsed };
       }
     } catch {

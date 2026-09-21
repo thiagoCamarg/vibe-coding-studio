@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Github, Twitter, Code2, Heart } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 interface FooterProps {
   onOpenProposal: () => void;
@@ -49,15 +49,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenProposal }) => {
             className="hover:text-white transition-colors"
           >
             github
-          </a>
-          <span className="text-white/20 select-none">•</span>
-          <a
-            href="https://x.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-white transition-colors"
-          >
-            x.com
           </a>
 
           <button

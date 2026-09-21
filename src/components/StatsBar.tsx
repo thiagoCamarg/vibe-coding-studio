@@ -18,8 +18,8 @@ export const StatsBar: React.FC = () => {
       accentColor: 'text-[#4cd7f6]',
     },
     {
-      value: '100% Seu',
-      label: 'Código-fonte. Sem Mensalidade.',
+      value: '100% Exclusivo',
+      label: 'Design sob Medida e Focado no seu Nicho',
       accentColor: 'text-[#4edea3]',
     },
   ];

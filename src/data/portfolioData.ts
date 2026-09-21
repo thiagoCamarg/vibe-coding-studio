@@ -10,12 +10,12 @@ import {
 export const DEFAULT_DIRECT_IMAGES: DirectImageLinks = {
   // Portrait matching the founder (bald with dark beard and black shirt) seamlessly integrated
   heroPortrait: '/hero-portrait.png',
-  // Landing page de vendas - curso online
-  caseAnalytics: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
-  // Landing page de captura - SaaS pré-lançamento
-  caseTaskFlow: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
-  // Landing page institucional - escritório de arquitetura
-  caseNeuroDoc: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80',
+  // Landing page de vendas - Clínica Odontológica & Estética
+  caseAnalytics: '/case-odonto.jpg',
+  // Landing page de captura - Advocacia Empresarial & Tributária
+  caseTaskFlow: '/case-advocacia.jpg',
+  // Landing page institucional - Imóveis de Luxo & Studio de Arquitetura
+  caseNeuroDoc: '/case-imoveis.jpg',
 };
 
 export const SERVICES_DATA: ServiceItem[] = [
