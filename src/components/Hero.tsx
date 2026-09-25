@@ -299,7 +299,7 @@ export const Hero: React.FC<HeroProps> = ({
             >
               
               {/* Subtle back ambient glow */}
-              <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/4 w-[300px] h-[300px] bg-white/[0.04] rounded-full blur-[80px] pointer-events-none" />
+              <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/4 w-[300px] h-[300px] bg-[#10b981]/[0.08] rounded-full blur-[90px] pointer-events-none" />
 
               {/* Photo element with seamless bottom fade & zero frame */}
               <div className="relative w-full flex justify-center items-end min-h-[460px] sm:min-h-[520px]">
@@ -604,7 +604,7 @@ export const Hero: React.FC<HeroProps> = ({
                 {/* Direct Action Button */}
                 <button
                   onClick={() => onStartProject(scenario.label)}
-                  className="w-full py-3 px-4 rounded-full font-semibold text-xs uppercase font-mono tracking-wider text-black bg-white hover:bg-neutral-200 shadow-sm flex items-center justify-center gap-2 transition-all cursor-pointer group"
+                  className="w-full py-3.5 px-4 rounded-full font-semibold text-xs uppercase font-mono tracking-wider text-black bg-white hover:bg-neutral-200 shadow-sm flex items-center justify-center gap-2 transition-all cursor-pointer group hover:scale-[1.01]"
                 >
                   <span>Quero Página para {scenario.label}</span>
                   <span className="group-hover:translate-x-1 transition-transform">→</span>

@@ -68,7 +68,7 @@ export const ProcessSection: React.FC = () => {
 
               {/* Step Footer Highlight */}
               <div className="pt-4 border-t border-white/[0.08] flex items-center gap-2 text-[11px] font-mono text-white/80">
-                {getStepIcon(step.iconName)}
+                <span className="text-[#10b981]">{getStepIcon(step.iconName)}</span>
                 <span>{step.footerHighlight}</span>
               </div>
             </div>

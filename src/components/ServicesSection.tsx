@@ -64,7 +64,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                 )}
                 <div>
                   {/* Icon */}
-                  <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center mb-5 group-hover:border-white/20 transition-colors">
+                  <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center mb-5 group-hover:border-[#10b981]/30 transition-colors">
                     {getIcon(service.iconName)}
                   </div>
 
@@ -94,7 +94,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
 
                   <div className="pt-3 border-t border-white/[0.08] flex items-center justify-between text-[11px] font-mono text-text-muted group-hover:text-white transition-colors">
                     <span>Prazo: {service.timeline}</span>
-                    <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform text-white/70" />
+                    <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform text-[#10b981]" />
                   </div>
                 </div>
               </div>

@@ -6,12 +6,14 @@
   --font-sans: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
-  --color-canvas: #09090b;
-  --color-surface-1: #111115;
-  --color-surface-2: #18181e;
-  --color-surface-3: #22222a;
+  --color-canvas: #070709;
+  --color-surface-1: #0e0e13;
+  --color-surface-2: #14141c;
+  --color-surface-3: #1b1b26;
   --color-border-subtle: rgba(255, 255, 255, 0.08);
+  --color-border-emerald: rgba(16, 185, 129, 0.25);
   --color-accent-emerald: #10b981;
+  --color-accent-emerald-light: #34d399;
   --color-text-primary: #fafafa;
   --color-text-secondary: #a1a1aa;
   --color-text-muted: #71717a;
@@ -29,14 +31,14 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background-color: #09090b;
+  background-color: #070709;
   color: #fafafa;
   overflow-x: clip;
   min-height: 100vh;
 }
 
 ::selection {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(16, 185, 129, 0.35);
   color: #ffffff;
 }
 
@@ -46,14 +48,14 @@ body {
   height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #09090b;
+  background: #070709;
 }
 ::-webkit-scrollbar-thumb {
-  background: #27272a;
+  background: #1e2923;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #3f3f46;
+  background: #10b981;
 }
 
 /* Google PageSpeed & Core Web Vitals: Off-screen Rendering Optimization */

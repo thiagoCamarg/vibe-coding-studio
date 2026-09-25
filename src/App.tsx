@@ -93,8 +93,18 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#09090b] text-[#fafafa] flex flex-col selection:bg-white/20 selection:text-white">
+    <div className="min-h-screen bg-[#070709] text-[#fafafa] flex flex-col selection:bg-[#10b981]/30 selection:text-white relative overflow-hidden">
       
+      {/* Discreet Emerald Ambient Lighting Overlays */}
+      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        {/* Top Hero Glow */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-[radial-gradient(ellipse_at_top,rgba(16,185,129,0.05),transparent_70%)] blur-[30px]" />
+        {/* Mid Page Left Glow */}
+        <div className="absolute top-[45%] -left-[10%] w-[550px] h-[550px] bg-[radial-gradient(circle,rgba(16,185,129,0.03),transparent_65%)] blur-[60px]" />
+        {/* Contact Bottom Right Glow */}
+        <div className="absolute bottom-[5%] -right-[10%] w-[650px] h-[650px] bg-[radial-gradient(circle,rgba(16,185,129,0.04),transparent_65%)] blur-[70px]" />
+      </div>
+
       {/* Sticky Global Navigation */}
       <Navbar
         onOpenImageManager={() => setIsImageManagerOpen(true)}
@@ -102,7 +112,7 @@ export default function App() {
       />
 
       {/* Main Single Page Content */}
-      <main className="flex-1">
+      <main className="flex-1 relative z-10">
         
         {/* Hero Section */}
         <Hero

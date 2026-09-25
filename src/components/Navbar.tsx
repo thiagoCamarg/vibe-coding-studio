@@ -26,23 +26,39 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProposal }) => {
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-white/[0.08] bg-[#09090b]/90 backdrop-blur-xl transition-colors">
+    <header className="sticky top-0 z-40 w-full border-b border-white/[0.08] bg-[#070709]/90 backdrop-blur-xl transition-colors relative">
+      {/* Top Discreet Hairline Shimmer */}
+      <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-[#10b981]/25 to-transparent" />
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         
         {/* Brand Identity */}
-        <a 
-          href="#"
-          className="inline-flex items-center gap-3 group focus:outline-none"
-        >
-          <div className="flex flex-col">
-            <span className="font-syne text-base sm:text-lg font-bold tracking-tight text-white group-hover:text-white/90 transition-colors">
-              THIAGO CAMARGO
+        <div className="flex items-center gap-3.5">
+          <a 
+            href="#"
+            className="inline-flex items-center gap-3 group focus:outline-none"
+          >
+            <div className="flex flex-col">
+              <span className="font-syne text-base sm:text-lg font-bold tracking-tight text-white group-hover:text-white/90 transition-colors">
+                THIAGO CAMARGO
+              </span>
+              <span className="font-mono text-[10px] text-text-muted tracking-widest uppercase">
+                Landing Page Studio
+              </span>
+            </div>
+          </a>
+
+          {/* Discreet Live Status Badge */}
+          <div className="hidden sm:inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-[#10b981]/5 border border-[#10b981]/15">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#10b981] opacity-60" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#10b981]" />
             </span>
-            <span className="font-mono text-[10px] text-text-muted tracking-widest uppercase">
-              Landing Page Studio
+            <span className="font-mono text-[10px] text-[#10b981] tracking-wider uppercase font-medium">
+              Disponível
             </span>
           </div>
-        </a>
+        </div>
 
         {/* Desktop Navigation Links */}
         <nav className="hidden md:flex items-center gap-7">

@@ -26,16 +26,22 @@ export const StatsBar: React.FC = () => {
 
   return (
     <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-4 mb-20">
-      <div className="rounded-2xl bg-[#111115] border border-white/[0.08] p-6 sm:p-8 shadow-xl backdrop-blur-md">
+      <div className="relative rounded-2xl bg-[#111115] border border-white/[0.08] p-6 sm:p-8 shadow-xl backdrop-blur-md overflow-hidden">
+        {/* Top Discreet Hairline */}
+        <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-[#10b981]/25 to-transparent" />
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 divide-y sm:divide-y-0 lg:divide-x divide-white/[0.08]">
           {stats.map((item, idx) => (
             <div
               key={idx}
               className={`flex flex-col ${idx !== 0 ? 'lg:pl-6 pt-6 sm:pt-0' : ''}`}
             >
-              <span className="font-syne text-3xl sm:text-4xl lg:text-[40px] font-bold tracking-tight text-white leading-none mb-2">
-                {item.value}
-              </span>
+              <div className="flex items-baseline gap-2 mb-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
+                <span className="font-syne text-3xl sm:text-4xl lg:text-[40px] font-bold tracking-tight text-white leading-none">
+                  {item.value}
+                </span>
+              </div>
               <p className="text-xs font-mono uppercase tracking-wider text-white/90 font-medium">
                 {item.label}
               </p>

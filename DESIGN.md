@@ -3,17 +3,22 @@ name: Vibe Coding Studio
 version: 1.1.0
 description: Design tokens and editorial design rationale for Thiago Camargo's modern portfolio & landing page studio
 colors:
-  canvas: "#08080a"
-  surface-1: "#0f0f13"
-  surface-2: "#15151a"
-  surface-3: "#1c1c24"
-  border-subtle: "rgba(255, 255, 255, 0.07)"
-  border-hover: "rgba(255, 255, 255, 0.2)"
+  canvas: "#070709"
+  surface-1: "#0e0e13"
+  surface-2: "#14141c"
+  surface-3: "#1b1b26"
+  border-subtle: "rgba(255, 255, 255, 0.08)"
+  border-emerald: "rgba(16, 185, 129, 0.3)"
+  border-hover: "rgba(16, 185, 129, 0.5)"
   primary: "#10b981"
+  primary-glow: "rgba(16, 185, 129, 0.35)"
   accent-emerald: "#10b981"
-  text-primary: "#f1f0f5"
-  text-muted: "#8e8e99"
-  text-highlight: "#ffffff"
+  accent-emerald-light: "#34d399"
+  accent-emerald-dark: "#059669"
+  text-primary: "#fafafa"
+  text-secondary: "#a1a1aa"
+  text-muted: "#71717a"
+  text-emerald: "#34d399"
 typography:
   display:
     fontFamily: Syne
